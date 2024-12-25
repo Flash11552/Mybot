@@ -1,51 +1,73 @@
 {
-    "name": "Auto Approove Bot",
-    "description": "Auto approove telegram group/channel join requests bot.",
-    "repository": "https://github.com/VJBots/VJ-Auto-Approval-Bot",
-    "logo":"https://telegra.ph/file/a782e3bbbe40df8a4bb67.jpg",
+    "name": "⛦ Frozen music ⛦",
+    "description": "A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.",
+    "logo": "https://graph.org/file/f0e790de4d84d5b4dab72-bc4dcadff42362281c.jpg",
     "keywords": [
-        "Bot",
-        "Telegram ",
-        "Pyrogram "
+    "python3",
+    "telegram",
+    "bot",
+    "Brandrd",
+    "MusicBot",
+    "telegram-bot",
+    "pyrogram"
     ],
-    
     "env": {
-    "API_ID": {
-      "description": "Enter your API_ID, get it from my.telegram.org/apps",
-      "required": true
+      "API_ID": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "BOT_TOKEN": {
+        "description": "A Bot's token from Botfather",
+        "value": "",
+        "required": true
+      },
+      "MONGO_DB_URI": {
+        "description": "Get a mongodb url from https://cloud.mongodb.com.",
+        "value": "",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "The user id of user whom you would like to add as OWNER.",
+        "value": "",
+        "required": true
+      },
+      "STRING_SESSION": {
+        "description": "A Pyrogram v2 String Session from any session bot on Telegram.",
+        "value": "",
+        "required": true
+      },
+      "HEROKU_API_KEY": {
+        "description": "Your Heroku account's API key",
+        "value": "",
+        "required": false
+      },
+      "HEROKU_APP_NAME": {
+        "description": "Your heroku app name",
+        "value": "",
+        "required": false
+      },
+      "LOGGER_ID": {
+        "description": "Your Log Group ID, add your bot and promote as an admin with full rights! and turn on vc. Don't Add Channel's ID. and the assistant acc shoud not be the owner of log gc",
+        "value": "",
+        "required": true
+      }
     },
-    "API_HASH": {
-      "description": "Enter your API_HASH, get it from my.telegram.org/apps",
-      "required": true
-    },
-    "BOT_TOKEN": {
-      "description": "Enter your Bot token, get it from @BotFather",
-      "required": true
-    },
-    "CHID": {
-      "description": "Enter your Force Subscribe channel ID",
-      "required": true
-    },,
-    "FSUB": {
-      "description": "Enter your Force Subscribe channel Username without @",
-      "required": true
-    },,
-    "SUDO": {
-      "description": "Enter Bot Owners IDS",
-      "required": true
-    }
-        
-  },
-  
-    "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "free"
-    }
-  },
     "buildpacks": [
-        {
-            "url": "heroku/python"
-        }
-    ]
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
+      "stack": "container"
 }
